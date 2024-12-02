@@ -47,7 +47,7 @@ void Game::init() {
   g_camera->track_pos(&hero_pos);
 
   hero = std::make_unique<Sprite>(g_res->get_sprite("bigas"));
-  hp = std::make_unique<Sprite>(g_res->get_sprite("health_potion"));
+  hp = std::make_unique<Sprite>(g_res->get_sprite("meat"));
 }
 
 void Game::fixed_update(double tmod) {
