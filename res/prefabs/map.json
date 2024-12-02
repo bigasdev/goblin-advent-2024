@@ -1,0 +1,26 @@
+[
+    {
+        "atlas_name": "character_atlas",
+        "atlas_pos_x": 0,
+        "atlas_pos_y": 0,
+        "name": "bigas",
+        "sprite_size_x": 12,
+        "sprite_size_y": 10
+    },
+    {
+        "atlas_name": "items_atlas",
+        "atlas_pos_x": 1,
+        "atlas_pos_y": 0,
+        "name": "health_potion",
+        "sprite_size_x": 8,
+        "sprite_size_y": 8
+    },
+    {
+        "atlas_name": "items_atlas",
+        "atlas_pos_x": 0,
+        "atlas_pos_y": 0,
+        "name": "stamina_potion",
+        "sprite_size_x": 8,
+        "sprite_size_y": 8
+    }
+]
