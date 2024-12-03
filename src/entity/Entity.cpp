@@ -22,11 +22,14 @@ Entity::~Entity() {
 void Entity::update(double dt) {
   m_cooldown->update(dt);
   m_affect_manager->update(dt);
+
+  pos.x += dx;
+  pos.y += dy;
 }
 
 void Entity::fixed_update(double tmod) {
-  dx*=Math::pow(.89f, tmod);
-  dy*=Math::pow(.89f, tmod);
+  dx*=Math::pow(frict_x, tmod);
+  dy*=Math::pow(frict_y, tmod);
 }
 
 

@@ -54,6 +54,8 @@ void Game::init() {
 void Game::fixed_update(double tmod) {
   //dx += (g_input_manager->get_raw_axis().x * 17.5) * tmod;
   //dy += (g_input_manager->get_raw_axis().y * 17.5) * tmod;
+
+  hero->fixed_update(tmod);
 }
 
 void Game::update(double dt) {
@@ -74,7 +76,8 @@ void Game::update(double dt) {
   }
 
   if(slow_mo){
-    Timer::apply_slow_mo(.1f * dt);
+    //Timer::apply_slow_mo(.1f * dt);
+    hero->dx = 5;
   }
   
   hero_pos += {dx,dy};
@@ -82,6 +85,8 @@ void Game::update(double dt) {
   if(wood_pos.y > 70){
     wood_pos.y = 0;
   }
+
+  hero->update(dt);
 }
 
 void Game::post_update(double dt) {

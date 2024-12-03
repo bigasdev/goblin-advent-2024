@@ -17,8 +17,8 @@ public:
   Entity(std::string spr_name, vec2 _pos);
   ~Entity();
 
-  void update(double dt);
-  void fixed_update(double tmod);
+  virtual void update(double dt);
+  virtual void fixed_update(double tmod);
 
   Sprite spr;
   //
@@ -27,6 +27,8 @@ public:
   int life = 100;
   int max_life = 100;
   int armor = 0;
+  //velocity
+  float dx = 0.0, dy = 0.0;
 private:
   //
   Cooldown* m_cooldown;
@@ -34,8 +36,6 @@ private:
   AffectManager* m_affect_manager;
 
   
-  //velocity
-  float dx = 0.0, dy = 0.0;
   float frict_x = 0.82 , frict_y = 0.82;
   //gravity stuff 
   float dz = 0.0, zr = 0.0;
