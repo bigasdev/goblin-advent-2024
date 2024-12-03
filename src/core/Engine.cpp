@@ -23,6 +23,7 @@
 #include "SDL_ttf.h"
 #include "SDL_video.h"
 #include "SoundManager.hpp"
+#include "PlayerController.hpp"
 #include "Timer.hpp"
 #include "global.hpp"
 #include <cassert>
@@ -111,8 +112,10 @@ void Engine::post_init() {
   m_renderer = new Renderer(m_gpu);
   m_sound_manager = new SoundManager();
   m_input_manager = new InputManager();
+  m_player_controller = new PlayerController();
   g_sound_manager = m_sound_manager;
   g_input_manager = m_input_manager;
+  g_player_controller = m_player_controller;
 
   m_res = new Res(m_sdl_renderer);
   m_res->init();

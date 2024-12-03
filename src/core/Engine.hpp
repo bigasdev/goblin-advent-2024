@@ -19,6 +19,7 @@ class Game;
 class Res;
 class InputManager;
 class SoundManager;
+class PlayerController;
 
 class Engine {
 private:
@@ -34,6 +35,7 @@ private:
   Res *m_res;
   InputManager *m_input_manager;
   SoundManager *m_sound_manager;
+  PlayerController *m_player_controller;
 
   vec2 m_window_size;
 

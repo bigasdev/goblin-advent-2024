@@ -6,6 +6,7 @@
 #include "../renderer/Renderer.hpp"
 #include "../res/Res.hpp"
 #include "../core/global.hpp"
+#include "../core/PlayerController.hpp"
 #include "../core/Timer.hpp"
 #include "../tools/Math.hpp"
 #include "../renderer/Sprite.hpp"
@@ -54,12 +55,15 @@ void Game::init() {
 void Game::fixed_update(double tmod) {
   //dx += (g_input_manager->get_raw_axis().x * 17.5) * tmod;
   //dy += (g_input_manager->get_raw_axis().y * 17.5) * tmod;
+  hero->dx += g_player_controller->x * tmod;
+  hero->dy += g_player_controller->y * tmod;
 
   hero->fixed_update(tmod);
 }
 
 void Game::update(double dt) {
   m_cooldown->update(dt);
+  g_player_controller->update(dt);
 
   if (moving_left)
     m_camera->track_pos(&wood_pos);

@@ -7,5 +7,6 @@ Camera* g_camera;
 Cooldown* g_cooldown;
 SoundManager* g_sound_manager;
 InputManager* g_input_manager;
+PlayerController* g_player_controller;
 
 bool g_controller_connected;
