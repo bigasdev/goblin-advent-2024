@@ -12,6 +12,9 @@ Entity::Entity(std::string spr_name, vec2 _pos) {
   spr = g_res->get_sprite(spr_name);
   pos = _pos;
 
+  dx = 0.0f;
+  dy = 0.0f;
+
   m_cooldown = new Cooldown();
   m_affect_manager = new AffectManager();
 }

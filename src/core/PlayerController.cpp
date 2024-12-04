@@ -3,6 +3,8 @@
 #include "InputManager.hpp"
 
 PlayerController::PlayerController() {
+  x = 0;
+  y = 0;
 }
 
 PlayerController::~PlayerController() {

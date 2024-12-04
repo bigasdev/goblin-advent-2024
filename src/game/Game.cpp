@@ -46,17 +46,20 @@ void Game::init() {
   g_input_manager->bind_keyboard(SDLK_q, &moving_left);
   g_input_manager->bind_keyboard(SDLK_SPACE, &slow_mo);
 
-  g_camera->track_pos(&hero_pos);
-
   hero = std::make_unique<Entity>("bigas", vec2{50,50});
   hp = std::make_unique<Entity>("meat", vec2{0,0});
+
+  g_camera->track_pos(&hero->pos);
 }
 
 void Game::fixed_update(double tmod) {
   //dx += (g_input_manager->get_raw_axis().x * 17.5) * tmod;
   //dy += (g_input_manager->get_raw_axis().y * 17.5) * tmod;
-  hero->dx += g_player_controller->x * tmod;
-  hero->dy += g_player_controller->y * tmod;
+  hero->dx += (g_player_controller->x *17.15f)* tmod;
+  hero->dy += (g_player_controller->y *17.15f)* tmod;
+
+  Logger::log("dx: " + std::to_string(hero->dx));
+  Logger::log("dy: " + std::to_string(hero->dy));
 
   hero->fixed_update(tmod);
 }

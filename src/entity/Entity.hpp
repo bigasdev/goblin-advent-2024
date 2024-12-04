@@ -28,7 +28,7 @@ public:
   int max_life = 100;
   int armor = 0;
   //velocity
-  float dx = 0.0, dy = 0.0;
+  float dx = 0.0f, dy = 0.0f;
 private:
   //
   Cooldown* m_cooldown;

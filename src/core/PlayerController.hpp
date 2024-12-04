@@ -11,7 +11,7 @@ public:
   void init();
   void update(double dt);
 
-  int x, y;
+  int x = 0, y = 0;
 };
 
 #endif
